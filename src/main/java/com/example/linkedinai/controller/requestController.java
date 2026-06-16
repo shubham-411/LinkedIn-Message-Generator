@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"https://linked-in-message-generator.vercel.app","http://localhost:5173"})
 public class requestController {
         @Autowired
         private requestService service;
