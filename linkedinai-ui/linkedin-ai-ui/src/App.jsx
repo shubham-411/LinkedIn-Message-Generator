@@ -113,9 +113,10 @@ export default function App() {
     setLoading(true);
     setError('');
     setMessages([]);
+    const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
 
     try {
-      const res = await fetch('https://linkedin-message-generator-fq4r.onrender.com/api/generate-message', {
+      const res = await fetch(`${baseUrl}/api/generate-message`, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify(form),
@@ -129,11 +130,7 @@ export default function App() {
       if (parsed.length === 0) throw new Error('No messages returned. Please try again.');
       setMessages(parsed);
     } catch (err) {
-      setError(
-        err.message.includes('fetch')
-          ? 'Could not connect to the server. Make sure the Spring Boot backend is running on port 8080.'
-          : err.message
-      );
+      setError(`Network Exception: ${err.message}`);
     } finally {
       setLoading(false);
     }
