@@ -22,7 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-src/main/resources/application-local.properties
-.env
-target/
-node_modules/
