@@ -8,10 +8,6 @@ const STYLES = [
   { key: 'style-3', label: '🚀 Opportunity Explorer',  badge: 'badge-3' },
 ];
 
-/**
- * Split the raw response into up to 3 individual messages.
- * Handles numbered lists like "1.", "2.", "3." or blank-line separation.
- */
 function parseMessages(raw) {
   const numbered = raw.split(/\n\s*(?=\d\.\s)/);
   if (numbered.length >= 2) {
@@ -119,7 +115,7 @@ export default function App() {
     setMessages([]);
 
     try {
-      const res = await fetch('https://linkedin-message-generator-fq4r.onrender.com/generate-message', {
+      const res = await fetch('https://linkedin-message-generator-fq4r.onrender.com/api/generate-message', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify(form),
