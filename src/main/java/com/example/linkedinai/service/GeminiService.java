@@ -102,6 +102,7 @@ Guidelines:
 5. Do not sound salesy, desperate, or robotic.
 6. Focus on curiosity and learning.
 7. End with a light, open-ended question.
+8. be professional
 
 Style Requirements:
 - Friendly but professional
@@ -115,7 +116,7 @@ Generate 3 different message variations:
 2. Career Advice Seeker
 3. Opportunity Explorer
 
-Return only the messages without explanation.
+Return only the messages without explanation and just return 3 paragraphs without headings in sequence.
 """.formatted(
                 request.getTargetName(),
                 request.getTargetRole(),
