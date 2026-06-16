@@ -119,7 +119,7 @@ export default function App() {
     setMessages([]);
 
     try {
-      const res = await fetch('http://localhost:8080/api/generate-message', {
+      const res = await fetch('https://linkedin-message-generator-fq4r.onrender.com/generate-message', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify(form),
